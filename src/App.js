@@ -1,22 +1,32 @@
-
+import logo from './logo.svg';
+import React from 'react';
 import './App.css';
 
-
-function funcName(name) {
-  return name.fName + ' ' + name.lName;
+function DisplayImage() {
+  return (
+    <img src={logo} className="App-logo" alt="logo" />
+  )
 }
-const name = {
-  fName: 'Venkat',
-  lName: 'Chala'
-};
-const hello = <h1>Hello {funcName(name)}</h1>;
-function App() {
+function Greet(props) {
+  return (
+    <p>
+      Welcome {props.name}...
+    </p>
+  )
+}
+
+function App(props) {
+
   return (
     <div>
-      {hello}
+      <DisplayImage />
+      <Greet name={props.name} />
     </div>
+
 
   );
 }
+
+
 
 export default App;
